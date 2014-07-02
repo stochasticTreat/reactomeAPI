@@ -5,8 +5,7 @@ queryReactomeAnalysisAPI<-function(url="http://www.reactome.org:80/AnalysisServi
 
 	genes.json <- toJSON(x=genes)
 	genes.str <- paste(genes, collapse = "\t")
-	opts <- list(httpheader = c("Content-Type" = "text/plain;charset=UTF-8",
-															"Accept" = "application/json"))
+	opts <- list(httpheader = c("Content-Type" = "text/plain;charset=UTF-8", "Accept" = "application/json"))
 	pres <- postForm(uri=url, input=genes.str, .opts=opts, style="HTTPPOST")
 	return(pres)
 }
